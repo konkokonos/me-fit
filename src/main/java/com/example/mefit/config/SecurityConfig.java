@@ -17,7 +17,6 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/v1/profiles").hasRole("ADMIN")
-                        .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
                 .jwt()
