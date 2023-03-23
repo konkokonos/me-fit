@@ -1,9 +1,3 @@
-/*FOR THE USERS*/
-INSERT INTO users (username,user_password,first_name,last_name,iscontributor,isadmin) 
-VALUES ('Kostas1','Hello1234!','Konstantinos1','Kokonos1',true,true),
-       ('Kostas2','Hello1234!','Konstantinos2','Kokonos2',true,false),
-       ('Kostas3','Hello1234!','Konstantinos3','Kokonos3',false,false);
-
 /*FOR THE GOAL*/
 INSERT INTO goal (goal_name,complete_goal) 
 VALUES ('Lose weight',false),
