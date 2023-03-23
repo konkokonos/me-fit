@@ -16,7 +16,7 @@ public class SecurityConfig {
         http.cors().and().sessionManagement().disable()
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
-                        .mvcMatchers("/api/v1/profiles").hasRole("ADMIN")
+                        .requestMatchers("/api/v1/profiles").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
