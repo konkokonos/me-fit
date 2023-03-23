@@ -18,7 +18,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("api/v1/exercises").hasAuthority("user")
                         .requestMatchers("api/v1/profiles").hasAuthority("admin")
-                        .requestMatchers("api/v1/programs").hasAuthority("contributor")
+                        .requestMatchers("api/v1/programs").hasAuthority("Contributor")
                 )
                 .oauth2ResourceServer()
                 .jwt()
