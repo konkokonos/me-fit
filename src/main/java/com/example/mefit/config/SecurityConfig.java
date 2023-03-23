@@ -17,8 +17,9 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("api/v1/*").permitAll()
+                        .requestMatchers("/api/v1/**").permitAll()
                         //Define the Mappings
-                        //.anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer()
                 .jwt()
