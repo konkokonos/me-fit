@@ -16,7 +16,7 @@ public class SecurityConfig {
         http.cors().and().sessionManagement().disable()
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("api/v1/profiles").hasRole("Administrator")
+                        .requestMatchers("/api/v1/profiles").hasRole("Administrator")
                 )
                 .oauth2ResourceServer()
                 .jwt()
@@ -27,7 +27,7 @@ public class SecurityConfig {
     @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-        //grantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
+        grantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
         grantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
 
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
