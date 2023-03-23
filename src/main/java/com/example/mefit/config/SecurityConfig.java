@@ -17,8 +17,8 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
                         //.requestMatchers("api/v1/profiles").hasRole("ADMIN")
-                        .requestMatchers("api/v1/*").hasRole("CONTRIBUTOR")
-                        .requestMatchers("api/v1/**").hasRole("CONTRIBUTOR")
+                        .requestMatchers("api/v1/*").hasAuthority("CONTRIBUTOR")
+                        .requestMatchers("api/v1/**").hasAuthority("CONTRIBUTOR")
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
