@@ -16,8 +16,8 @@ public class SecurityConfig {
         http.cors().and().sessionManagement().disable()
                 .csrf().disable()
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("api/v1/profiles").hasRole("Admin")
-                        .requestMatchers("api/v1/exercises").hasRole("Contributor").anyRequest().authedicated()
+                        .requestMatchers("api/v1/profiles").hasRole("Admin").anyRequest().authenticated()
+                        .requestMatchers("api/v1/exercises").hasRole("Contributor").anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
                 .jwt()
