@@ -19,7 +19,7 @@ public class SecurityConfig {
         http.sessionManagement().disable();
 
         http.authorizeRequests()
-                .requestMatchers(HttpMethod.GET,"/api/v1/exercises").hasAuthority("Administrator")
+                .requestMatchers("/api/v1/exercises").permitAll()
                 .and()
                 .oauth2ResourceServer()
                 .jwt()
