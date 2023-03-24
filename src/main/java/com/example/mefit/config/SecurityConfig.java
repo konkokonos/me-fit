@@ -17,7 +17,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             //.cors().and()
-            // Sessions will not be use
+            // Sessions will not be used
             // Disable CSRF -- not necessary when there are no sessions
             //.csrf().disable()
             // Enable security for http requests
