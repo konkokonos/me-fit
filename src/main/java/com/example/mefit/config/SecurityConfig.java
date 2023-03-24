@@ -22,9 +22,10 @@ public class SecurityConfig {
                 .csrf().disable()
                 // Enable security for http requests
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/api/v1/exercises").hasRole("Contributor")
-                        // All remaining paths require authentication
-                        .anyRequest().authenticated()
+                    .requestMatchers("/api/v1/exercises").hasRole("Contributor")
+                    .requestMatchers("/api/v1/workouts").hasAuthority("Contributor")
+                    // All remaining paths require authentication
+                    .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
                 .jwt()
