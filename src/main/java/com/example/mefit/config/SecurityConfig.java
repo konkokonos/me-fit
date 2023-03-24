@@ -23,12 +23,11 @@ public class SecurityConfig {
                 .csrf().disable()
                 // Enable security for http requests
                 .authorizeHttpRequests(authorize -> authorize
-                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("contributor")
-                    .requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("contributor")
-                    .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasRole("Contributor")
-                    .requestMatchers(HttpMethod.GET, "/api/v1/goals").hasAuthority("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasAuthority("CONTRIBUTOR")
                     // All remaining paths require authentication
-                    //.anyRequest().authenticated()
+                    .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
                 .jwt()
