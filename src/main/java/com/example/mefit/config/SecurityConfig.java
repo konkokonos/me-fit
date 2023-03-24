@@ -28,7 +28,7 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasRole("Contributor")
                     .requestMatchers(HttpMethod.GET, "/api/v1/goals").hasAuthority("Contributor")
                     // All remaining paths require authentication
-                    .anyRequest().authenticated()
+                    //.anyRequest().authenticated()
                 )
                 .oauth2ResourceServer()
                 .jwt()
