@@ -16,11 +16,10 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             // Enable CORS -- this is further configured on the controllers
-            .cors().and()
+            //.cors().and()
             // Sessions will not be used
-            .sessionManagement().disable()
             // Disable CSRF -- not necessary when there are no sessions
-            .csrf().disable()
+            //.csrf().disable()
             // Enable security for http requests
             .authorizeHttpRequests()
                 .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
@@ -33,6 +32,7 @@ public class SecurityConfig {
         http.oauth2ResourceServer()
             .jwt()
             .jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         return http.build();
     }
 
