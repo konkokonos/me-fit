@@ -16,7 +16,6 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-            // Enable CORS -- this is further configured on the controllers
             //.cors().and()
             // Sessions will not be used
             // Disable CSRF -- not necessary when there are no sessions
