@@ -19,7 +19,7 @@ public class SecurityConfig {
         http.sessionManagement().disable();
 
         http.authorizeRequests()
-                .requestMatchers(HttpMethod.GET,"/api/v1/exercises").hasAuthority("Contributor")
+                .requestMatchers(HttpMethod.GET,"/api/v1/exercises").hasAuthority("Administrator")
                 .and()
                 .oauth2ResourceServer()
                 .jwt()
@@ -31,7 +31,7 @@ public class SecurityConfig {
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
         grantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
-        grantedAuthoritiesConverter.setAuthorityPrefix("role_");
+        grantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
 
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
