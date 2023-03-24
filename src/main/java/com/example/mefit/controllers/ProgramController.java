@@ -18,7 +18,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping(path = "api/v1/programs")
+@RequestMapping(path = "/api/v1/programs")
 public class ProgramController {
     private final ProgramService programService;
     private final ProgramMapper programMapper;
