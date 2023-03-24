@@ -21,7 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping(path = "api/v1/goals")
+@RequestMapping(path = "/api/v1/goals")
 public class GoalController {
     private final GoalService goalService;
     private final GoalMapper goalMapper;
