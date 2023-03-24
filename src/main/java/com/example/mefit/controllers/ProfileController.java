@@ -17,7 +17,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping(path = "api/v1/profiles")
+@RequestMapping(path = "/api/v1/profiles")
 public class ProfileController {
     private final ProfileService profileService;
     private final ProfileMapper profileMapper;
