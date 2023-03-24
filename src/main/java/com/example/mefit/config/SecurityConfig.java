@@ -23,7 +23,7 @@ public class SecurityConfig {
                 .csrf().disable()
                 // Enable security for http requests
                 .authorizeHttpRequests()
-                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasAuthorize("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasAuthority("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasAuthority("Administrator")
