@@ -30,9 +30,9 @@ public class SecurityConfig {
                     // All remaining paths require authentication
                     .anyRequest().authenticated()
                 //)
-                .oauth2ResourceServer()
-                .jwt()
-                .jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
+                //.oauth2ResourceServer()
+                //.jwt()
+                //.jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
         return http.build();
     }
 
