@@ -20,7 +20,7 @@ import java.net.URISyntaxException;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000"})
-@RequestMapping(path = "api/v1/workouts")
+@RequestMapping(path = "/api/v1/workouts")
 public class WorkoutController {
     private final WorkoutService workoutService;
     private final WorkoutMapper workoutMapper;
