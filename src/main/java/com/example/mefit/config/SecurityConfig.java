@@ -1,4 +1,4 @@
-package com.example.mefit.config;
+itpackage com.example.mefit.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +19,7 @@ public class SecurityConfig {
         http.sessionManagement().disable();
 
         http.authorizeRequests()
-                .requestMatchers("/api/v1/exercises").hasAuthority("Contributor")
+                .requestMatchers("/api/v1/exercises").permitAll()
                 .and()
                 .oauth2ResourceServer()
                 .jwt()
