@@ -19,7 +19,7 @@ public class SecurityConfig {
         http.sessionManagement().disable();
 
         http.authorizeRequests()
-                .requestMatchers(HttpMethod.GET,"/api/v1/exercises").hasRole("Contributor")
+                .requestMatchers(HttpMethod.GET,"/api/v1/exercises").hasAuthority("Contributor")
                 .and()
                 .oauth2ResourceServer()
                 .jwt()
