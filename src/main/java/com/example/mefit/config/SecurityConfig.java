@@ -29,7 +29,7 @@ public class SecurityConfig {
                     //.requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasAuthority("Administrator")
                     // All remaining paths require authentication
                     .anyRequest().authenticated()
-                )
+                //)
                 .oauth2ResourceServer()
                 .jwt()
                 .jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
