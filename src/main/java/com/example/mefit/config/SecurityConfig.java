@@ -22,7 +22,7 @@ public class SecurityConfig {
                 // Disable CSRF -- not necessary when there are no sessions
                 .csrf().disable()
                 // Enable security for http requests
-                .authorizeHttpRequests(authorize -> authorize
+                .authorizeHttpRequests()
                     .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
