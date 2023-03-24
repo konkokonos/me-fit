@@ -23,7 +23,7 @@ public class SecurityConfig {
                 .csrf().disable()
                 // Enable security for http requests
                 .authorizeHttpRequests(authorize -> authorize
-                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("CONTRIBUTOR")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasAuthority("Administrator")
@@ -42,7 +42,7 @@ public class SecurityConfig {
         // Use roles claim as authorities
         grantedAuthoritiesConverter.setAuthoritiesClaimName("roles");
         // Add the ROLE_ prefix - for hasRole
-        grantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+        //grantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
 
         JwtAuthenticationConverter jwtAuthenticationConverter = new JwtAuthenticationConverter();
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
