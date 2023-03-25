@@ -30,7 +30,7 @@ public class SecurityConfig {
                 // Enable security for http requests
                 .authorizeHttpRequests(authorize -> authorize
 
-                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasAuthority("ROLE_Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("Contributor")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
                     //.requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasAuthority("Administrator")
