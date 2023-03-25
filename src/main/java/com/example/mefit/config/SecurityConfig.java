@@ -35,7 +35,7 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasRole("Contributor")
                     .requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasRole("Administrator")
                     .requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
-                    //.anyRequest().authenticated()
+                    .anyRequest().authenticated()
                 );
 
         http.oauth2ResourceServer()
