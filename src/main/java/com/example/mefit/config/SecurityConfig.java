@@ -31,11 +31,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
 
                     .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
-                    //.requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasAuthority("Contributor")
-                    //.requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
-                    //.requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasAuthority("Administrator")
-                    // All remaining paths require authentication
-                    .anyRequest().authenticated()
+                    .requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasRole("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasRole("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasRole("Administrator")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
+                    //.anyRequest().authenticated()
                 );
 
         http.oauth2ResourceServer()
