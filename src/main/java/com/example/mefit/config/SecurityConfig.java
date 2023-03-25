@@ -30,9 +30,9 @@ public class SecurityConfig {
                 .anyRequest().authenticated();
                 
         //http.oauth2ResourceServer()
-        //    .jwt()
-        //    .jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
-        //http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        //   .jwt()
+        //   .jwtAuthenticationConverter(jwtRoleAuthenticationConverter());
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         return http.build();
     }
 
