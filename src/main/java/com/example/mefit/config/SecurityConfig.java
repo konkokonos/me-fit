@@ -32,15 +32,6 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
                     .requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasRole("Contributor")
                     .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasRole("Contributor")
-                    .anyRequest().denyAll()
-                );
-        http
-                .cors().and()
-                // Disable CSRF -- not necessary when there are no sessions
-                .csrf().disable()
-                // Enable security for http requests
-                .authorizeHttpRequests(authorize -> authorize
-
                     .requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasRole("Administrator")
                     .requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
                     .anyRequest().denyAll()
