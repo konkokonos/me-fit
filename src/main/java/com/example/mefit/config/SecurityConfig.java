@@ -23,9 +23,6 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .cors().and()
-                // Disable CSRF -- not necessary when there are no sessions
-                .csrf().disable()
                 // Enable security for http requests
                 .authorizeHttpRequests(authorize -> authorize
 
