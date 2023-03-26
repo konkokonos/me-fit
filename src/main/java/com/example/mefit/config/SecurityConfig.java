@@ -29,6 +29,7 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.GET, "/api/v1/exercises").hasRole("Contributor")
                     .requestMatchers(HttpMethod.GET, "/api/v1/workouts").hasRole("Contributor")
                     .requestMatchers(HttpMethod.GET, "/api/v1/programs").hasRole("Contributor")
+                    .requestMatchers(HttpMethod.GET, "/api/v1/users").hasRole("Contributor")               
                     .requestMatchers(HttpMethod.GET, "/api/v1/profiles").hasRole("Administrator")
                     .requestMatchers(HttpMethod.GET, "/api/v1/goals").hasRole("Administrator")
                     .anyRequest().denyAll()
